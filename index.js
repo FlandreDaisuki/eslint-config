@@ -117,7 +117,7 @@ module.exports = {
 
     // Common
     'semi': ['error', 'always'],
-    'curly': ['error', 'multi-or-nest', 'consistent'],
+    'curly': ['error', 'all'],
     'quotes': ['error', 'single'],
     'quote-props': ['error', 'consistent-as-needed'],
     'no-unused-vars': 'warn',
@@ -173,8 +173,8 @@ module.exports = {
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
-    'template-curly-spacing': 'error',
-    'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+    'template-curly-spacing': ['error', 'always'],
+    'arrow-parens': ['error', 'always', { requireForBlockBody: true }],
     'generator-star-spacing': 'off',
     'spaced-comment': ['error', 'always', {
       line: {
