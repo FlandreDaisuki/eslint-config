@@ -11,6 +11,10 @@ module.exports = {
     'plugin:jsonc/recommended-with-jsonc',
   ],
 
+  parserOptions: {
+    ecmaVersion: 'latest'
+  },
+
   ignorePatterns: [
     '*.min.*',
     'CHANGELOG.md',
