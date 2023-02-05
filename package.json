@@ -1,8 +1,8 @@
 {
   "name": "@flandredaisuki/eslint-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
-  "author": "FlandreDaisuki <vbnm123c@gmail.com> (https://github.com/FlandreDaisuki/)",
+  "author": "FlandreDaisuki <vbnm123c+github@gmail.com> (https://github.com/FlandreDaisuki/)",
   "scripts": {
     "lint": "eslint ."
   },
@@ -10,11 +10,11 @@
     "eslint": ">=7.4.0"
   },
   "devDependencies": {
-    "eslint": "^8.12.0"
+    "eslint": "^8.33.0"
   },
   "dependencies": {
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsonc": "^2.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsonc": "^2.6.0",
     "jsonc-eslint-parser": "^2.1.0"
   },
   "publishConfig": {
