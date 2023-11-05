@@ -2,6 +2,7 @@
   "name": "@flandredaisuki/eslint-config",
   "type": "module",
   "version": "0.1.0",
+  "packageManager": "pnpm@8.10.2",
   "description": "FlandreDaisuki's ESLint config",
   "author": "FlandreDaisuki <vbnm123c+github@gmail.com> (https://github.com/FlandreDaisuki/)",
   "license": "MIT",
