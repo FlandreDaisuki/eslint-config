@@ -52,7 +52,7 @@ export function flandre(options: OptionsConfig & ConfigItem = {}, ...userConfigs
     isInEditor = !!((process.env.VSCODE_PID || process.env.JETBRAINS_IDE) && !process.env.CI),
     overrides = {},
     typescript: enableTypeScript = isPackageExists('typescript'),
-    vue: enableVue = VuePackages.some(i => isPackageExists(i)),
+    vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
   } = options;
 
   const stylisticOptions = options.stylistic === false
@@ -60,8 +60,9 @@ export function flandre(options: OptionsConfig & ConfigItem = {}, ...userConfigs
     : typeof options.stylistic === 'object'
       ? options.stylistic
       : {};
-  if (stylisticOptions && !('jsx' in stylisticOptions))
+  if (stylisticOptions && !('jsx' in stylisticOptions)) {
     stylisticOptions.jsx = options.jsx ?? true;
+  }
 
   const configs: ConfigItem[][] = [];
 
@@ -70,8 +71,9 @@ export function flandre(options: OptionsConfig & ConfigItem = {}, ...userConfigs
       configs.push([gitignore(enableGitignore)]);
     }
     else {
-      if (fs.existsSync('.gitignore'))
+      if (fs.existsSync('.gitignore')) {
         configs.push([gitignore()]);
+      }
     }
   }
 
@@ -96,8 +98,9 @@ export function flandre(options: OptionsConfig & ConfigItem = {}, ...userConfigs
     perfectionist(),
   );
 
-  if (enableVue)
+  if (enableVue) {
     componentExts.push('vue');
+  }
 
   if (enableTypeScript) {
     configs.push(typescript({
@@ -109,8 +112,9 @@ export function flandre(options: OptionsConfig & ConfigItem = {}, ...userConfigs
     }));
   }
 
-  if (stylisticOptions)
+  if (stylisticOptions) {
     configs.push(stylistic(stylisticOptions));
+  }
 
   if (options.test ?? true) {
     configs.push(test({
@@ -155,12 +159,14 @@ export function flandre(options: OptionsConfig & ConfigItem = {}, ...userConfigs
   // User can optionally pass a flat config item to the first argument
   // We pick the known keys as ESLint would do schema validation
   const fusedConfig = flatConfigProps.reduce((acc, key) => {
-    if (key in options)
+    if (key in options) {
       acc[key] = options[key] as any;
+    }
     return acc;
   }, {} as ConfigItem);
-  if (Object.keys(fusedConfig).length)
+  if (Object.keys(fusedConfig).length) {
     configs.push([fusedConfig]);
+  }
 
   const merged = combine(
     ...configs,

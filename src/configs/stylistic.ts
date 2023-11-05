@@ -10,7 +10,7 @@ export function stylistic(options: StylisticConfig = {}): ConfigItem[] {
 
   return [
     {
-      name: 'antfu:stylistic',
+      name: 'flandre:stylistic',
       plugins: {
         antfu: pluginAntfu,
         style: pluginStylistic,
@@ -18,12 +18,11 @@ export function stylistic(options: StylisticConfig = {}): ConfigItem[] {
       rules: {
         'antfu/consistent-list-newline': 'error',
         'antfu/if-newline': 'error',
-        'antfu/top-level-function': 'error',
 
-        'curly': ['error', 'multi-or-nest', 'consistent'],
+        'curly': ['error', 'all'],
 
         'style/array-bracket-spacing': ['error', 'never'],
-        'style/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+        'style/arrow-parens': ['error', 'always', { requireForBlockBody: true }],
         'style/arrow-spacing': ['error', { after: true, before: true }],
         'style/block-spacing': ['error', 'always'],
         'style/brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
@@ -74,8 +73,17 @@ export function stylistic(options: StylisticConfig = {}): ConfigItem[] {
         'style/key-spacing': ['error', { afterColon: true, beforeColon: false }],
         'style/keyword-spacing': ['error', { after: true, before: true }],
         'style/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-        'style/max-statements-per-line': ['error', { max: 1 }],
-        'style/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
+        'style/max-statements-per-line': ['error', { max: 2 }],
+        'style/member-delimiter-style': ['error', {
+          multiline: {
+            delimiter: 'semi',
+            requireLast: true,
+          },
+          singleline: {
+            delimiter: 'semi',
+            requireLast: true,
+          },
+        }],
         'style/multiline-ternary': ['error', 'always-multiline'],
         'style/new-parens': 'error',
         'style/no-extra-parens': ['error', 'functions'],

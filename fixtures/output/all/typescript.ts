@@ -1,7 +1,7 @@
 // Define a TypeScript interface
 interface Person {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 
 // Create an array of objects with the defined interface
@@ -15,8 +15,9 @@ const people: Person[] = [
 const log = console.log;
 
 // Use a for...of loop to iterate over the array
-for (const person of people)
+for (const person of people) {
   log(`Hello, my name is ${person.name} and I am ${person.age} years old.`);
+}
 
 // Define a generic function
 function identity< T >(arg: T): T {
@@ -31,8 +32,8 @@ log(result);
 
 // Use optional properties in an interface
 interface Car {
-  make: string
-  model?: string
+  make: string;
+  model?: string;
 }
 
 // Create objects using the interface
@@ -76,8 +77,8 @@ class Dog extends Animal {
 const dog = new Dog('Buddy');
 dog.bark();
 
-function fn(): string {
+const fn = (): string => {
   return `hello${1}`;
-}
+};
 
 log(car1, car2, favoriteFruit, numericValue, fn());
