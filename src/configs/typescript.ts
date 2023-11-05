@@ -1,8 +1,8 @@
-import process from 'node:process'
-import type { ConfigItem, OptionsComponentExts, OptionsOverrides, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes } from '../types'
-import { GLOB_SRC } from '../globs'
-import { parserTs, pluginAntfu, pluginImport, pluginTs } from '../plugins'
-import { renameRules, toArray } from '../utils'
+import process from 'node:process';
+import type { ConfigItem, OptionsComponentExts, OptionsOverrides, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes } from '../types';
+import { GLOB_SRC } from '../globs';
+import { parserTs, pluginAntfu, pluginImport, pluginTs } from '../plugins';
+import { renameRules, toArray } from '../utils';
 
 export function typescript(
   options?: OptionsComponentExts & OptionsOverrides & OptionsTypeScriptWithTypes & OptionsTypeScriptParserOptions,
@@ -11,7 +11,7 @@ export function typescript(
     componentExts = [],
     overrides = {},
     parserOptions = {},
-  } = options ?? {}
+  } = options ?? {};
 
   const typeAwareRules: ConfigItem['rules'] = {
     'dot-notation': 'off',
@@ -33,11 +33,11 @@ export function typescript(
     'ts/restrict-plus-operands': 'error',
     'ts/restrict-template-expressions': 'error',
     'ts/unbound-method': 'error',
-  }
+  };
 
   const tsconfigPath = options?.tsconfigPath
     ? toArray(options.tsconfigPath)
-    : undefined
+    : undefined;
 
   return [
     {
@@ -142,5 +142,5 @@ export function typescript(
         'ts/no-var-requires': 'off',
       },
     },
-  ]
+  ];
 }

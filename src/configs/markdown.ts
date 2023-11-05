@@ -1,12 +1,12 @@
-import type { ConfigItem, OptionsComponentExts, OptionsOverrides } from '../types'
-import { GLOB_MARKDOWN, GLOB_MARKDOWN_CODE } from '../globs'
-import { pluginMarkdown } from '../plugins'
+import type { ConfigItem, OptionsComponentExts, OptionsOverrides } from '../types';
+import { GLOB_MARKDOWN, GLOB_MARKDOWN_CODE } from '../globs';
+import { pluginMarkdown } from '../plugins';
 
 export function markdown(options: OptionsComponentExts & OptionsOverrides = {}): ConfigItem[] {
   const {
     componentExts = [],
     overrides = {},
-  } = options
+  } = options;
 
   return [
     {
@@ -85,5 +85,5 @@ export function markdown(options: OptionsComponentExts & OptionsOverrides = {}):
         ...overrides,
       },
     },
-  ]
+  ];
 }

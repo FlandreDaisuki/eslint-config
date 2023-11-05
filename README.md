@@ -2,7 +2,7 @@
 
 Derive from [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 
-- Single quotes, no semi
+- Single quotes, always semi
 - Auto fix for formatting (aimed to be used standalone **without** Prettier)
 - Designed to work with TypeScript, JSX, Vue out-of-box
 - Lints also for json, yaml, markdown
@@ -27,18 +27,18 @@ With [`"type": "module"`](https://nodejs.org/api/packages.html#type) in `package
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
-export default flandre()
+export default flandre();
 ```
 
 With CJS:
 
 ```js
 // eslint.config.js
-const flandre = require('@flandredaisuki/eslint-config').default
+const flandre = require('@flandredaisuki/eslint-config').default;
 
-module.exports = flandre()
+module.exports = flandre();
 ```
 
 > Note that `.eslintignore` no longer works in Flat config, see [customization](#customization) for more details.
@@ -114,16 +114,16 @@ Normally you only need to import the `flandre` preset:
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
-export default flandre()
+export default flandre();
 ```
 
 And that's it! Or you can configure each integration individually, for example:
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
 export default flandre({
   // Enable stylistic formatting rules
@@ -148,14 +148,14 @@ export default flandre({
     './fixtures',
     // ...globs
   ]
-})
+});
 ```
 
 The `flandre` factory function also accepts any number of arbitrary custom config overrides:
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
 export default flandre(
   {
@@ -171,7 +171,7 @@ export default flandre(
   {
     rules: {},
   },
-)
+);
 ```
 
 Going more advanced, you can also import fine-grained configs and compose them as you wish:
@@ -199,7 +199,7 @@ import {
   unicorn,
   vue,
   yaml,
-} from '@flandredaisuki/eslint-config'
+} from '@flandredaisuki/eslint-config';
 
 export default [
   ...ignores(),
@@ -215,7 +215,7 @@ export default [
   ...jsonc(),
   ...yaml(),
   ...markdown(),
-]
+];
 ```
 
 </details>
@@ -252,7 +252,7 @@ Certain rules would only be enabled in specific files, for example, `ts/*` rules
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
 export default flandre(
   { vue: true, typescript: true },
@@ -269,14 +269,14 @@ export default flandre(
       'style/semi': ['error', 'never'],
     },
   }
-)
+);
 ```
 
 We also provided an `overrides` options to make it easier:
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
 export default flandre({
   overrides: {
@@ -289,7 +289,7 @@ export default flandre({
     yaml: {},
     // ...
   }
-})
+});
 ```
 
 ### Optional Rules
@@ -310,7 +310,7 @@ const objectWantedToSort = {
   a: 2,
   b: 1,
   c: 3,
-}
+};
 /* eslint perfectionist/sort-objects: "off" */
 ```
 
@@ -320,13 +320,13 @@ You can optionally enable the [type aware rules](https://typescript-eslint.io/li
 
 ```js
 // eslint.config.js
-import flandre from '@flandredaisuki/eslint-config'
+import flandre from '@flandredaisuki/eslint-config';
 
 export default flandre({
   typescript: {
     tsconfigPath: 'tsconfig.json',
   },
-})
+});
 ```
 
 ## Versioning Policy

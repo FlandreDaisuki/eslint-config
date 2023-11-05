@@ -1,6 +1,6 @@
 // @ts-check
-import styleMigrate from '@stylistic/eslint-plugin-migrate'
-import flandre from './dist/index.js'
+import styleMigrate from '@stylistic/eslint-plugin-migrate';
+import flandre from './dist/index.js';
 
 export default flandre(
   {
@@ -26,4 +26,4 @@ export default flandre(
       'style-migrate/migrate': ['error', { namespaceTo: 'style' }],
     },
   },
-)
+);

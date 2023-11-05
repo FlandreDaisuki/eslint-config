@@ -1,12 +1,12 @@
-import type { ConfigItem, StylisticConfig } from '../types'
-import { pluginAntfu, pluginStylistic } from '../plugins'
+import type { ConfigItem, StylisticConfig } from '../types';
+import { pluginAntfu, pluginStylistic } from '../plugins';
 
 export function stylistic(options: StylisticConfig = {}): ConfigItem[] {
   const {
     indent = 2,
     jsx = true,
     quotes = 'single',
-  } = options
+  } = options;
 
   return [
     {
@@ -100,7 +100,7 @@ export function stylistic(options: StylisticConfig = {}): ConfigItem[] {
         'style/quote-props': ['error', 'consistent-as-needed'],
         'style/quotes': ['error', quotes, { allowTemplateLiterals: true, avoidEscape: false }],
         'style/rest-spread-spacing': ['error', 'never'],
-        'style/semi': ['error', 'never'],
+        'style/semi': ['error', 'always'],
         'style/semi-spacing': ['error', { after: true, before: false }],
         'style/space-before-blocks': ['error', 'always'],
         'style/space-before-function-paren': ['error', { anonymous: 'always', asyncArrow: 'always', named: 'never' }],
@@ -163,5 +163,5 @@ export function stylistic(options: StylisticConfig = {}): ConfigItem[] {
           : {},
       },
     },
-  ]
+  ];
 }

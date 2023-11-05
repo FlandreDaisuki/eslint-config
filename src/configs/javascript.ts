@@ -1,13 +1,13 @@
-import globals from 'globals'
-import type { ConfigItem, OptionsIsInEditor, OptionsOverrides } from '../types'
-import { pluginAntfu, pluginUnusedImports } from '../plugins'
-import { GLOB_SRC, GLOB_SRC_EXT } from '../globs'
+import globals from 'globals';
+import type { ConfigItem, OptionsIsInEditor, OptionsOverrides } from '../types';
+import { pluginAntfu, pluginUnusedImports } from '../plugins';
+import { GLOB_SRC, GLOB_SRC_EXT } from '../globs';
 
 export function javascript(options: OptionsIsInEditor & OptionsOverrides = {}): ConfigItem[] {
   const {
     isInEditor = false,
     overrides = {},
-  } = options
+  } = options;
 
   return [
     {
@@ -221,5 +221,5 @@ export function javascript(options: OptionsIsInEditor & OptionsOverrides = {}): 
         'no-console': 'off',
       },
     },
-  ]
+  ];
 }

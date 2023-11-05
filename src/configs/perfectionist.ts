@@ -1,5 +1,5 @@
-import type { ConfigItem } from '../types'
-import { pluginPerfectionist } from '../plugins'
+import type { ConfigItem } from '../types';
+import { pluginPerfectionist } from '../plugins';
 
 /**
  * Optional perfectionist plugin for props and items sorting.
@@ -14,5 +14,5 @@ export function perfectionist(): ConfigItem[] {
         perfectionist: pluginPerfectionist,
       },
     },
-  ]
+  ];
 }
