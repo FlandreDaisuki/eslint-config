@@ -41,6 +41,32 @@ const flandre = require('@flandredaisuki/eslint-config').default;
 module.exports = flandre();
 ```
 
+Combined with legacy config:
+
+```js
+// eslint.config.js
+const antfu = require('@antfu/eslint-config').default;
+const { FlatCompat } = require('@eslint/eslintrc');
+
+const compat = new FlatCompat();
+
+module.exports = antfu(
+  {
+    ignores: [],
+  },
+
+  // Legacy config
+  ...compat.config({
+    extends: [
+      'eslint:recommended',
+      // Other extends...
+    ],
+  })
+
+  // Other flat configs...
+);
+```
+
 > Note that `.eslintignore` no longer works in Flat config, see [customization](#customization) for more details.
 
 ### Add script for package.json
@@ -55,6 +81,16 @@ For example:
   }
 }
 ```
+
+### Migration
+
+We provided an experimental cli tool to help you migrate from the legacy config to the new flat config.
+
+```bash
+npx @antfu/eslint-config migrate
+```
+
+Before running the migration, make sure to commit your changes first.
 
 ## VS Code support (auto fix)
 
