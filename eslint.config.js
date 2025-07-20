@@ -5,7 +5,7 @@ import flandre from './dist/index.js';
 export default [
   ...flandre.preset,
   {
-    files: ['src/**/*.js', '**/*.config.js'],
+    files: ['src/**/*.ts', '**/*.config.js'],
   },
   {
     ignores: ['dist/*'],
